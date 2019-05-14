@@ -1,44 +1,5 @@
 #include "monty.h"
 
-size_t pall(stack_t **head, unsigned int n)
-{
-	(void) n;
-	size_t count = 0;
-	stack_t *temp = *head;
-
-	if (!temp)
-		return (0);
-	while (temp)
-	{
-		printf("%d\n", temp->n);
-		temp = temp->next;
-		count++;
-	}
-	return (count);
-}
-
-
-stack_t *push(stack_t **head, unsigned int n)
-{
-	dlistint_t *new_node;
-
-	if (!head)
-		return (0);
-	new_node = malloc(sizeof(dlistint_t));
-
-	if (!new_node)
-	{
-		free(new_node);
-		return (0);
-	}
-	new_node->n = n;
-	new_node->next = *head;
-	new_node->prev = NULL;
-	if (*head)
-		(*head)->prev = new_node;
-	*head = new_node;
-	return (new_node);
-}
 /**
  * read_textfile - reads a text file and prints to the POSIX stout.
  * @argv[1]: path of file to be proccessed
