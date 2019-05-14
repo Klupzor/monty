@@ -11,4 +11,5 @@ void push(stack_t **head, unsigned int n)
 	if (*head)
 		(*head)->prev = new_node;
 	*head = new_node;
+	printf("linea: %u\n", line_number);
 }

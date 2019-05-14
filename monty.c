@@ -8,6 +8,7 @@
  */
 int main(int argc, char **argv)
 {
+	unsigned int line_number = 0;
 	FILE *fd;
 	ssize_t print;
 	size_t len = 0;
@@ -27,8 +28,8 @@ int main(int argc, char **argv)
 			num = 0;
 		else
 			num = atoi(token);
-
 		get_ins(op) (&head, num);
+		line_number++;
 	}
 
 	fclose(fd);

@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
+static unsigned int line_number;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -36,6 +37,7 @@ typedef struct instruction_s
 } instruction_t;
 
 void pall(stack_t **head, unsigned int n);
-void push(stack_t **head, unsigned int n);
+extern void push(stack_t **head, unsigned int n);
 void (*get_ins(char *s))(stack_t **stack, unsigned int line_number);
+void print_error(char *msg);
 #endif
