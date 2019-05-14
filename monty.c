@@ -21,16 +21,13 @@ int main(int argc, char **argv)
 	fd = fopen(argv[1], "r");
 	while ((print = getline(&buffer, &len, fd)) != -1)
 	{
-		printf("size: %zu\n", print);
 		op  = strtok(buffer, " \t\n");
 		token  = strtok(NULL, " \t\n");
 		if (!token)
 			num = 0;
 		else
-		{
 			num = atoi(token);
-			printf("num: %u\n", num);
-		}
+
 		get_ins(op) (&head, num);
 	}
 
