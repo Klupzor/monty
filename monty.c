@@ -12,7 +12,8 @@ int main(int argc, char **argv)
 	ssize_t print;
 	size_t len = 0;
 	char *buffer = NULL;
-	char *token;
+	char *token, *op;
+	unsigned int num;
 	stack_t *head = NULL;
 
 	if (!argv[1])
@@ -21,12 +22,16 @@ int main(int argc, char **argv)
 	while ((print = getline(&buffer, &len, fd)) != -1)
 	{
 		printf("size: %zu\n", print);
-		token = strtok(buffer, " \t\n");
-		while (token)
+		op  = strtok(buffer, " \t\n");
+		token  = strtok(NULL, " \t\n");
+		if (!token)
+			num = 0;
+		else
 		{
-			printf("%s\n", token);
-			token = strtok(NULL, " \t\n");
+			num = atoi(token);
+			printf("num: %u\n", num);
 		}
+		get_ins(op) (&head, num);
 	}
 
 	fclose(fd);
