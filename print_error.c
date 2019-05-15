@@ -1,6 +1,7 @@
 #include "monty.h"
 
-void print_error(char *msg)
+void print_error(unsigned int line, char *msg)
 {
-	write(STDERR_FILENO, msg, strlen(msg));
+	fprintf(stderr, "L%u: %s\n", line, msg);
+	exit(EXIT_FAILURE);
 }

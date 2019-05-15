@@ -6,9 +6,9 @@
  * @letters: number of letters to be read and printed
  * Return: Always 0.
  */
+unsigned int line_number = 0;
 int main(int argc, char **argv)
 {
-	unsigned int line_number = 0;
 	FILE *fd;
 	ssize_t print;
 	size_t len = 0;
@@ -24,10 +24,17 @@ int main(int argc, char **argv)
 	{
 		op  = strtok(buffer, " \t\n");
 		token  = strtok(NULL, " \t\n");
-		if (!token)
-			num = 0;
+
+		if(strcmp(op, "push") == 0)
+		{
+			num = tonum(token);
+			if (num == -1 || !token)
+				print_error(line_number, "usage: push integer");
+		}
 		else
-			num = atoi(token);
+		{
+			num = 0;
+		}
 		get_ins(op) (&head, num);
 		line_number++;
 	}
