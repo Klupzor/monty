@@ -4,8 +4,8 @@
  * @head: double pointer to head node
  * @line: line number
  */
-void nop(stack_t **head, unsigned int line)
+void nop(stack_t **stack, unsigned int line_number)
 {
-	(void) head;
-	(void) line;
+	(void) stack;
+	(void) line_number;
 }
