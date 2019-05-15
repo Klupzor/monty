@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * pop - removes the top element of the stack
+ * nop - removes the top element of the stack
  * @head: double pointer to head node
  * @line: line number
  */
