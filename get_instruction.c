@@ -1,10 +1,9 @@
 #include "monty.h"
 /**
- ** get_op_func - select the operator
- ** @s: operator to compare.
- **
- ** Return: the fuction.
-*/
+ * get_ins - select the operator from stucture
+ * @s: word to be compare in stucture.
+ * Return: void
+ */
 
 void (*get_ins(char *s))(stack_t **stack, unsigned int line_number)
 {
