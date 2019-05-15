@@ -27,22 +27,25 @@ int main(int argc, char **argv)
 	while ((print = getline(&buffer, &len, fd)) != -1)
 	{
 		op  = strtok(buffer, " \t\n");
-		token  = strtok(NULL, " \t\n");
+		if (op)
+		{	
+			token  = strtok(NULL, " \t\n");
 
-		if (strcmp(op, "push") == 0)
-		{
-			num = tonum(token);
-			if (num == -1)
+			if (strcmp(op, "push") == 0)
 			{
-				free(buffer);
-				fclose(fd);
-				free_stack(head);
-				print_error(line_number, "usage: push integer");
+				num = tonum(token);
+				if (num == -1)
+				{
+					free(buffer);
+					fclose(fd);
+					free_stack(head);
+					print_error(line_number, "usage: push integer");
+				}
+				get_ins(op) (&head, num);
 			}
-			get_ins(op) (&head, num);
+			else
+				get_ins(op) (&head, line_number);
 		}
-		else
-			get_ins(op) (&head, line_number);
 		line_number++;
 	}
 	fclose(fd);
