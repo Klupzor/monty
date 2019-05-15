@@ -6,7 +6,7 @@
  * @letters: number of letters to be read and printed
  * Return: Always 0.
  */
-unsigned int line_number = 0;
+unsigned int line_number = 1;
 int main(int argc __attribute__((unused)), char **argv)
 {
 	FILE *fd;
@@ -29,7 +29,12 @@ int main(int argc __attribute__((unused)), char **argv)
 		{
 			num = tonum(token);
 			if (num == -1)
+			{
+				free(buffer);
+				fclose(fd);
+				free_stack(head);
 				print_error(line_number, "usage: push integer");
+			}
 		}
 		else
 		{
@@ -40,5 +45,6 @@ int main(int argc __attribute__((unused)), char **argv)
 	}
 	fclose(fd);
 	free(buffer);
+	free_stack(head);
 	return (0);
 }
