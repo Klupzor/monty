@@ -39,12 +39,10 @@ int main(int argc, char **argv)
 				free_stack(head);
 				print_error(line_number, "usage: push integer");
 			}
+			get_ins(op) (&head, num);
 		}
 		else
-		{
-			num = 0;
-		}
-		get_ins(op) (&head, num);
+			get_ins(op) (&head, line_number);
 		line_number++;
 	}
 	fclose(fd);

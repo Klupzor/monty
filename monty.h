@@ -38,6 +38,7 @@ typedef struct instruction_s
 void free_stack(stack_t *head);
 void pall(stack_t **head, unsigned int n);
 void push(stack_t **head, unsigned int n);
+void pint(stack_t **head, unsigned int n);
 void (*get_ins(char *s))(stack_t **stack, unsigned int line_number);
 void print_error(unsigned int line_number, char *msg);
 unsigned int tonum(char *s);
