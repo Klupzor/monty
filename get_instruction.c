@@ -20,7 +20,6 @@ void (*get_ins(char *s))(stack_t **stack, unsigned int line_number)
 			return (ins[i].f);
 		i++;
 	}
-
-	printf("Error\n");
-	exit(99);
+	opcode_error(line_number, s);
+	return (0);
 }

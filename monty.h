@@ -42,4 +42,9 @@ void (*get_ins(char *s))(stack_t **stack, unsigned int line_number);
 void print_error(unsigned int line_number, char *msg);
 unsigned int tonum(char *s);
 extern unsigned int line_number;
+/*monty errors collection*/
+void usage_error(void);
+void opfile_error(char *file);
+void opcode_error(unsigned int line, char *str);
+void malloc_error(void);
 #endif
