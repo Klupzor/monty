@@ -1,12 +1,14 @@
 #include "monty.h"
 
+unsigned int line_number = 1;
+
 /**
  * main - monty interpreter main function.
- * @argv[1]: path of file to be proccessed
- * @letters: number of letters to be read and printed
+ * @argv: arguments.
+ * @argc: number of params.
  * Return: Always 0.
  */
-unsigned int line_number = 1;
+
 int main(int argc __attribute__((unused)), char **argv)
 {
 	FILE *fd;
