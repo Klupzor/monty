@@ -25,7 +25,7 @@ int main(int argc __attribute__((unused)), char **argv)
 		op  = strtok(buffer, " \t\n");
 		token  = strtok(NULL, " \t\n");
 
-		if(strcmp(op, "push") == 0)
+		if (strcmp(op, "push") == 0)
 		{
 			num = tonum(token);
 			if (num == -1)

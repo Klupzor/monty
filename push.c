@@ -1,4 +1,9 @@
 #include "monty.h"
+/**
+ * push - function that push a node into the stack
+ * @head: double pointer head
+ * @n: line number
+ */
 void push(stack_t **head, unsigned int n)
 {
 	stack_t *new_node;
