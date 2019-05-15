@@ -12,10 +12,8 @@ unsigned int line_number = 1;
 int main(int argc, char **argv)
 {
 	FILE *fd;
-	ssize_t print;
 	size_t len = 0;
-	char *buffer = NULL;
-	char *token, *op;
+	char *buffer = NULL, *token, *op;
 	int num;
 	stack_t *head = NULL;
 
@@ -24,13 +22,12 @@ int main(int argc, char **argv)
 	fd = fopen(argv[1], "r");
 	if (!fd)
 		opfile_error(argv[1]);
-	while ((print = getline(&buffer, &len, fd)) != -1)
+	while (getline(&buffer, &len, fd) != -1)
 	{
 		op  = strtok(buffer, " \t\n");
 		if (op)
-		{	
+		{
 			token  = strtok(NULL, " \t\n");
-
 			if (strcmp(op, "push") == 0)
 			{
 				num = tonum(token);
