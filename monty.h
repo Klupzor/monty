@@ -39,6 +39,6 @@ void pall(stack_t **head, unsigned int n);
 void push(stack_t **head, unsigned int n);
 void (*get_ins(char *s))(stack_t **stack, unsigned int line_number);
 void print_error(unsigned int line_number, char *msg);
-int tonum(char *s);
+unsigned int tonum(char *s);
 extern unsigned int line_number;
 #endif

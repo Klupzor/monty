@@ -1,7 +1,10 @@
-int tonum(char *s)
+
+unsigned int tonum(char *s)
 {
 	unsigned int n = 0, i;
-
+	
+	if (!s)
+		return (-1);
 	for (i = 0 ; s[i] != '\0' ; i++)
 	{
 		if (s[i] >= 48 && s[i] <= 57)
