@@ -1,2 +1,0 @@
-push h
-pall
