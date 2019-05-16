@@ -43,6 +43,7 @@ void add(stack_t **head, unsigned int line);
 int isnum(char *s);
 void sub(stack_t **head, unsigned int line);
 void pop(stack_t **head, unsigned int line);
+void mod(stack_t **head, unsigned int line);
 void mul(stack_t **head, unsigned int line);
 void swap(stack_t **head, unsigned int line);
 void divide(stack_t **head, unsigned int line);
