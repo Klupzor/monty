@@ -29,6 +29,7 @@ int main(int argc, char **argv)
 	int num;
 	stack_t *head = NULL;
 
+	modstack(0);
 	if (argc != 2)
 		usage_error();
 	fd = fopen(argv[1], "r");
