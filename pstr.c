@@ -11,7 +11,7 @@ void pstr(stack_t **head, __attribute__((unused)) unsigned int line)
 	if (!temp)
 	{
 		putchar(10);
-		exit(1);
+		exit(0);
 	}
 
 	while (temp)
