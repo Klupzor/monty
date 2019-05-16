@@ -44,7 +44,7 @@ int isnum(char *s);
 void sub(stack_t **head, unsigned int line);
 void pop(stack_t **head, unsigned int line);
 void swap(stack_t **head, unsigned int line);
-void div(stack_t **head, unsigned int line);
+void divide(stack_t **head, unsigned int line);
 void nop(stack_t **head, unsigned int line);
 void (*get_ins(char *s))(stack_t **stack, unsigned int line_number);
 void print_error(unsigned int line_number, char *msg);

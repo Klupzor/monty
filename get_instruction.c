@@ -16,7 +16,7 @@ void (*get_ins(char *s))(stack_t **stack, unsigned int line_number)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
-		{"div", div},
+		{"div", divide},
 		{NULL, NULL}
 	};
 	int i = 0;

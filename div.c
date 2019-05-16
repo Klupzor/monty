@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * div - divides the second top element of the stack by the top element of the stack.
+ * div - divides the second top element of the stack by the top element.
  * @head: double pointer to head node.
  * @line: line number.
  */
-void div(stack_t **head, unsigned int line)
+void divide(stack_t **head, unsigned int line)
 {
 	int val1, val2;
 	stack_t *tmp;
