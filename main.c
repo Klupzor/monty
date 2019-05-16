@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 				token  = strtok(NULL, " \t\n");
 				if (strcmp(op, "push") == 0)
 				{
-					if (isnum(token) == 0)
+					if (isnum(token) == 0 || !token)
 					{
 						free_helper(buffer, fd, head);
 						print_error(line_number, "usage: push integer");
