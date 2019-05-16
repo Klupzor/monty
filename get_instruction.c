@@ -20,6 +20,7 @@ void (*get_ins(char *s))(stack_t **stack, unsigned int line_number)
 		{"mul", mul},
 		{"mod", mod},
 		{"#", nop},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 	int i = 0;
