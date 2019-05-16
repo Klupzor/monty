@@ -39,6 +39,7 @@ void free_stack(stack_t *head);
 void pall(stack_t **head, unsigned int n);
 void push(stack_t **head, unsigned int n);
 void pint(stack_t **head, unsigned int n);
+int isnum(char *s);
 void pop(stack_t **head, unsigned int line);
 void swap(stack_t **head, unsigned int line);
 void nop(stack_t **head, unsigned int line);

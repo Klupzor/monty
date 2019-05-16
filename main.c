@@ -30,14 +30,14 @@ int main(int argc, char **argv)
 			token  = strtok(NULL, " \t\n");
 			if (strcmp(op, "push") == 0)
 			{
-				num = tonum(token);
-				if (num == -1)
+				if (isnum(token) == 0)
 				{
 					free(buffer);
 					fclose(fd);
 					free_stack(head);
 					print_error(line_number, "usage: push integer");
 				}
+				num = atoi(token);
 				get_ins(op) (&head, num);
 			}
 			else
