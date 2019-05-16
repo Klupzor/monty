@@ -41,6 +41,7 @@ void push(stack_t **head, unsigned int n);
 void pint(stack_t **head, unsigned int n);
 void add(stack_t **head, unsigned int line);
 int isnum(char *s);
+void sub(stack_t **head, unsigned int line);
 void pop(stack_t **head, unsigned int line);
 void swap(stack_t **head, unsigned int line);
 void nop(stack_t **head, unsigned int line);
