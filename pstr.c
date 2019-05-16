@@ -9,7 +9,11 @@ void pstr(stack_t **head, __attribute__((unused)) unsigned int line)
 	stack_t *temp = *head;
 
 	if (!temp)
+	{
 		putchar(10);
+		exit(1);
+	}
+
 	while (temp)
 	{
 		if (temp->n < 0 || temp->n > 127 || temp->n == 0)
