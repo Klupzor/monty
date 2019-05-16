@@ -6,29 +6,24 @@
  */
 void rotr(stack_t **head, unsigned int n __attribute__((unused)))
 {
-	stack_t *temp, *end, *first, *aux;
+	stack_t *temp, *end;
 
 	temp = *head;
 
 	if (temp && count(head) > 1)
 	{
-		first = *head;
-		temp = temp->next;
 		while (temp->next)
 		{
 			if (!temp->next)
 				break;
-			aux = temp->next;
-			temp->next = temp->prev;
-			temp->prev = aux;
-			temp = aux;
+			temp = temp->next;
 		}
 		end = temp;
-		end->next = end->prev;
-		end->prev = NULL;
+		end->prev->next = NULL;
 
-		first->prev = first->next;
-		first->next = NULL;
+		end->next = *head;
+		(*head)->prev = end;
+		end->prev = NULL;
 
 		*head = end;
 	}
