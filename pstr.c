@@ -16,7 +16,7 @@ void pstr(stack_t **head, __attribute__((unused)) unsigned int line)
 
 	while (temp)
 	{
-		if (temp->n < 0 || temp->n > 127 || temp->n == 0)
+		if ((temp->n < 0 || temp->n > 127) || temp->n == 0)
 			break;
 		fprintf(stdout, "%c", temp->n);
 		temp = temp->next;
