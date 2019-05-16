@@ -14,7 +14,6 @@ void rotr(stack_t **head, unsigned int n __attribute__((unused)))
 	{
 		first = *head;
 		temp = temp->next;
-		printf("inicio ciclo\n");
 		while (temp->next)
 		{
 			if (!temp->next)
@@ -22,11 +21,9 @@ void rotr(stack_t **head, unsigned int n __attribute__((unused)))
 			aux = temp->next;
 			temp->next = temp->prev;
 			temp->prev = aux;
-			printf("node: %d\n", temp->n);
-			temp = temp->next;
+			temp = aux;
 		}
 		end = temp;
-		printf("asignando finales\n");
 		end->next = end->prev;
 		end->prev = NULL;
 
