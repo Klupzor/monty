@@ -23,7 +23,6 @@ void rotl(stack_t **head, unsigned int n __attribute__((unused)))
 		}
 		prev = temp;
 
-		printf("final\n");
 		first->next = NULL;
 		first->prev = prev;
 		temp->next = first;
