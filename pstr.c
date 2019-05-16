@@ -11,15 +11,16 @@ void pstr(stack_t **head, __attribute__((unused)) unsigned int line)
 	if (!temp)
 	{
 		putchar(10);
-		exit(0);
 	}
-
-	while (temp)
+	else
 	{
-		if ((temp->n < 0 || temp->n > 127) || temp->n == 0)
-			break;
-		fprintf(stdout, "%c", temp->n);
-		temp = temp->next;
-	}
+		while (temp)
+		{
+			if ((temp->n < 1 || temp->n > 127) || temp->n == 0)
+				break;
+			fprintf(stdout, "%c", temp->n);
+			temp = temp->next;
+		}
 	putchar(10);
+	}
 }
