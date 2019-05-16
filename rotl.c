@@ -10,7 +10,7 @@ void rotl(stack_t **head, unsigned int n __attribute__((unused)))
 
 	temp = *head;
 
-	if (temp)
+	if (temp && count(head) > 1)
 	{
 		first = *head;
 		temp->next->prev = NULL;
