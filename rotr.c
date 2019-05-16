@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * rotl - rotates the stack to the bottom.
+ * rotr - rotates the stack to the bottom.
  * @head: double pointer to head node
  * @n: unused parameter
  */
