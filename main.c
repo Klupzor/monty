@@ -1,7 +1,19 @@
 #include "monty.h"
-
 unsigned int line_number = 1;
+/**
+ * free_helper - helper function that frees
+ * @buffer: buffer pointer.
+ * @fd: file descriptor.
+ * @head: pointer to head.
+ */
+void free_helper(char *buffer, FILE *fd, stack_t *head)
+{
 
+	free(buffer);
+	fclose(fd);
+	free_stack(head);
+
+}
 /**
  * main - monty interpreter main function.
  * @argv: arguments.
@@ -27,26 +39,27 @@ int main(int argc, char **argv)
 		op  = strtok(buffer, " \t\n");
 		if (op)
 		{
-			token  = strtok(NULL, " \t\n");
-			if (strcmp(op, "push") == 0)
-			{
-				if (isnum(token) == 0)
-				{
-					free(buffer);
-					fclose(fd);
-					free_stack(head);
-					print_error(line_number, "usage: push integer");
-				}
-				num = atoi(token);
-				get_ins(op) (&head, num);
-			}
+			if (op[0] == '#')
+				get_ins("#") (&head, line_number);
 			else
-				get_ins(op) (&head, line_number);
+			{
+				token  = strtok(NULL, " \t\n");
+				if (strcmp(op, "push") == 0)
+				{
+					if (isnum(token) == 0)
+					{
+						free_helper(buffer, fd, head);
+						print_error(line_number, "usage: push integer");
+					}
+					num = atoi(token);
+					get_ins(op) (&head, num);
+				}
+				else
+					get_ins(op) (&head, line_number);
+			}
 		}
 		line_number++;
 	}
-	fclose(fd);
-	free(buffer);
-	free_stack(head);
+	free_helper(buffer, fd, head);
 	return (0);
 }
